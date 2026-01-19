@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HealTheHormone Program - A holistic hormone-balancing initiative supporting natural healing through diet, yoga, lifestyle, and AYUSH-based wellness.">
+    <title>HealTheHormone Program | Natural Hormone Balance & Holistic Wellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #a8d5ba;
+            --soft-sage: #d4e8d7;
+            --earth-tone: #e8dcc4;
+            --warm-white: #fefefe;
+            --text-dark: #2c3e3f;
+            --text-light: #5a6f71;
+            --accent-coral: #f4a896;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--warm-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--soft-sage) 0%, var(--primary-green) 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--text-dark);
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #3d5254;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--warm-white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        /* Approach Cards */
+        .approach {
+            background-color: var(--soft-sage);
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .approach-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .approach-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .approach-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .approach-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Privacy Section */
+        .privacy-notice {
+            background-color: var(--earth-tone);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .privacy-notice h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .privacy-notice p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Form Section */
+        .form-section {
+            background-color: var(--warm-white);
+        }
+
+        .form-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            min-height: 1200px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--soft-sage) 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--text-dark);
+        }
+
+        .whatsapp-badge {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Social Section */
+        .social {
+            background-color: var(--warm-white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .social-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .social p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-message {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin: 25px 0;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #888;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container iframe {
+                min-height: 1400px;
+            }
+
+            .privacy-notice {
+                padding: 25px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 15px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Healing Journey Towards Balanced Hormones Starts Here</h1>
+            <p class="hero-subtitle">Experience natural hormone balance through holistic wellness practices rooted in ancient wisdom and modern understanding</p>
+            <a href="#form" class="cta-button">Start Your Healing Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About HealTheHormone Program</h2>
+            <div class="about-content">
+                <p>HealTheHormone Program is a holistic hormone-balancing initiative designed to support natural healing through diet, yoga, lifestyle modification, mental well-being, and optional AYUSH-based medical support including Homeopathy and Ayurveda. We believe in empowering individuals to take charge of their wellness journey through gentle, sustainable, and personalized guidance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holistic Approach Section -->
+    <section class="approach">
+        <div class="container">
+            <h2 class="section-title">Our Holistic Approach</h2>
+            <p class="section-subtitle">We address hormone balance through five interconnected pillars of wellness, creating a comprehensive pathway to natural healing</p>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Diet & Nutrition</h3>
+                    <p>Personalized nutritional guidance that nourishes your body and supports hormonal harmony through whole foods and mindful eating practices.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Yoga & Movement</h3>
+                    <p>Gentle yoga practices and mindful movement designed to support hormonal balance, reduce stress, and enhance physical vitality.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Lifestyle Modification</h3>
+                    <p>Sustainable lifestyle changes that promote hormonal health, including sleep optimization, stress management, and daily routines aligned with natural rhythms.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Mental Well-Being</h3>
+                    <p>Holistic practices for emotional balance and mental clarity, recognizing the profound connection between mind and hormonal health.</p>
+                </div>
+
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3>AYUSH-Based Support</h3>
+                    <p>Optional guidance through Homeopathy and Ayurveda, offering time-tested natural approaches to support your healing journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Begin Your Healing Journey</h2>
+            <p class="form-intro">Please fill in the form carefully and honestly to help us serve you better. Your information helps us understand your unique needs and provide personalized guidance.</p>
+            
+            <div class="privacy-notice">
+                <h3><i class="fas fa-shield-alt"></i> Privacy & Confidentiality</h3>
+                <p>All information shared will be kept strictly confidential. You may be contacted by our team for further clarification or guidance. Your trust and privacy are paramount to us.</p>
+            </div>
+
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVZ9hfbxUW-XCT4fxjkpWO-sSBxJXGDmRHFHU0sYSHPb2KWw/viewform?embedded=true" loading="lazy">Loading form…</iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">We're here to support you on your healing journey. Reach out to us for guidance and assistance.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/917727325522">+91 77273 25522</a>
+                    <div class="whatsapp-badge">WhatsApp Only</div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:healthehormone@gmail.com">healthehormone@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social">
+        <div class="social-content">
+            <h2>Join Our Community</h2>
+            <a href="https://instagram.com/healthehormone" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+                @healthehormone
+            </a>
+            <p>Follow us on Instagram for wellness insights, tips, and inspiration on your journey to hormonal balance.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-message">HealTheHormone Program – Supporting Natural Hormone Balance</div>
+            
+            <div class="disclaimer">
+                This program provides wellness guidance and holistic support. We do not diagnose medical conditions or guarantee specific treatment outcomes. Please consult with qualified healthcare professionals for medical advice. Our approach complements, but does not replace, conventional medical care.
+            </div>
+            
+            <div class="copyright">
+                © 2026 HealTheHormone Program. All rights reserved. | Committed to your wellness journey with compassion and care.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#form').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
