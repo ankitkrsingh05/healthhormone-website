@@ -14,13 +14,14 @@
         }
 
         :root {
-            --primary-green: #a8d5ba;
-            --soft-sage: #d4e8d7;
-            --earth-tone: #e8dcc4;
+            --primary-purple: #6b4b8e;
+            --soft-purple: #8e6fb0;
+            --light-lavender: #d4c5e8;
+            --deep-purple: #3d2256;
             --warm-white: #fefefe;
-            --text-dark: #2c3e3f;
-            --text-light: #5a6f71;
-            --accent-coral: #f4a896;
+            --text-dark: #2d1b3d;
+            --text-light: #6b5a7a;
+            --accent-pink: #e8b4d9;
         }
 
         body {
@@ -36,10 +37,23 @@
             padding: 0 20px;
         }
 
+        /* Logo */
+        .logo {
+            text-align: center;
+            padding: 30px 20px 20px;
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--primary-purple) 100%);
+        }
+
+        .logo img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--soft-sage) 0%, var(--primary-green) 100%);
-            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, var(--light-lavender) 0%, var(--soft-purple) 100%);
+            padding: 80px 20px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -163,7 +177,7 @@
 
         .approach-icon {
             font-size: 3rem;
-            color: var(--primary-green);
+            color: var(--primary-purple);
             margin-bottom: 20px;
         }
 
@@ -182,12 +196,12 @@
 
         /* Privacy Section */
         .privacy-notice {
-            background-color: var(--earth-tone);
+            background-color: var(--light-lavender);
             padding: 40px;
             border-radius: 15px;
             max-width: 900px;
             margin: 0 auto 60px;
-            border-left: 5px solid var(--primary-green);
+            border-left: 5px solid var(--primary-purple);
         }
 
         .privacy-notice h3 {
@@ -229,14 +243,14 @@
 
         .form-container iframe {
             width: 100%;
-            min-height: 1200px;
+            min-height: 2000px;
             border: none;
             border-radius: 10px;
         }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--soft-sage) 100%);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-lavender) 100%);
         }
 
         .contact-grid {
@@ -261,7 +275,7 @@
 
         .contact-icon {
             font-size: 2.5rem;
-            color: var(--primary-green);
+            color: var(--primary-purple);
             margin-bottom: 15px;
         }
 
@@ -308,26 +322,40 @@
         .social h2 {
             font-size: 1.8rem;
             color: var(--text-dark);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        .instagram-link {
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .instagram-link, .whatsapp-community-link {
             display: inline-flex;
             align-items: center;
-            gap: 15px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            gap: 12px;
             color: white;
             padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
         }
 
-        .instagram-link:hover {
+        .instagram-link {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .whatsapp-community-link {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .instagram-link:hover, .whatsapp-community-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
@@ -353,7 +381,7 @@
 
         .footer-message {
             font-size: 1.3rem;
-            color: var(--primary-green);
+            color: var(--soft-purple);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -375,6 +403,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .logo img {
+                max-width: 200px;
+            }
+
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -392,7 +424,7 @@
             }
 
             .form-container iframe {
-                min-height: 1400px;
+                min-height: 2200px;
             }
 
             .privacy-notice {
@@ -402,11 +434,30 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .instagram-link, .whatsapp-community-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
+            .logo {
+                padding: 20px 15px 15px;
+            }
+
+            .logo img {
+                max-width: 180px;
+            }
+
             .hero {
-                padding: 80px 15px 60px;
+                padding: 60px 15px 60px;
             }
 
             .hero h1 {
@@ -421,10 +472,20 @@
                 padding: 14px 30px;
                 font-size: 1rem;
             }
+
+            .instagram-link, .whatsapp-community-link {
+                font-size: 1rem;
+                padding: 14px 25px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="./assets/images/logo.png" alt="HealTheHormone Program Logo">
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -506,12 +567,8 @@
             </div>
 
             <div class="form-container">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSeY5b9SOiG86WPn2evf__mNPDdeuzz7h2KTsZrEED6lMN4r7A/viewform?embedded=true"
-                  style="width:100%; min-height:2000px; border:0;"
-                  loading="lazy">
-                </iframe>
-        </div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeY5b9SOiG86WPn2evf__mNPDdeuzz7h2KTsZrEED6lMN4r7A/viewform?embedded=true" style="width:100%; min-height:2000px; border:0;" loading="lazy">Loading form…</iframe>
+            </div>
         </div>
     </section>
 
@@ -546,11 +603,17 @@
     <section class="social">
         <div class="social-content">
             <h2>Join Our Community</h2>
-            <a href="https://instagram.com/healthehormone" target="_blank" class="instagram-link">
-                <i class="fab fa-instagram"></i>
-                @healthehormone
-            </a>
-            <p>Follow us on Instagram for wellness insights, tips, and inspiration on your journey to hormonal balance.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/healthehormone" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                    @healthehormone
+                </a>
+                <a href="https://chat.whatsapp.com/samplelink" target="_blank" class="whatsapp-community-link">
+                    <i class="fab fa-whatsapp"></i>
+                    Join WhatsApp Community
+                </a>
+            </div>
+            <p>Follow us on Instagram and join our WhatsApp community for wellness insights, tips, and inspiration on your journey to hormonal balance.</p>
         </div>
     </section>
 
