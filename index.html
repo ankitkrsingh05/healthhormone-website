@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HealTheHormone Program - A holistic hormone-balancing initiative supporting natural healing through diet, yoga, lifestyle, and AYUSH-based wellness.">
+    <meta name="description" content="HealTheHormone Program - A holistic hormone-balancing initiative.">
     <title>HealTheHormone Program | Natural Hormone Balance & Holistic Wellness</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,6 +22,8 @@
             --text-dark: #2d1b3d;
             --text-light: #6b5a7a;
             --accent-pink: #e8b4d9;
+            --input-bg: #fdfbff;
+            --border-color: #e0d4f0;
         }
 
         body {
@@ -59,23 +61,6 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
         .hero h1 {
             font-size: 2.5rem;
             color: var(--text-dark);
@@ -93,7 +78,7 @@
             margin-right: auto;
         }
 
-        .cta-button {
+        .cta-button, .submit-btn {
             display: inline-block;
             background-color: var(--text-dark);
             color: white;
@@ -104,9 +89,12 @@
             font-weight: 500;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            width: auto;
         }
 
-        .cta-button:hover {
+        .cta-button:hover, .submit-btn:hover {
             background-color: #3d5254;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -134,65 +122,16 @@
             line-height: 1.8;
         }
 
-        /* About Section */
-        .about {
-            background-color: var(--warm-white);
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--text-light);
-        }
-
-        /* Approach Cards */
-        .approach {
-            background-color: var(--soft-sage);
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .approach-card {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .approach-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .approach-icon {
-            font-size: 3rem;
-            color: var(--primary-purple);
-            margin-bottom: 20px;
-        }
-
-        .approach-card h3 {
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .approach-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
+        /* About & Approach (Existing Styles Preserved) */
+        .about { background-color: var(--warm-white); }
+        .about-content { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.9; color: var(--text-light); }
+        .approach { background-color: #eef5f3; } /* Assuming soft-sage was intended as greenish/neutral */
+        .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .approach-card { background: white; padding: 35px 25px; border-radius: 15px; text-align: center; transition: all 0.3s ease; box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); }
+        .approach-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+        .approach-icon { font-size: 3rem; color: var(--primary-purple); margin-bottom: 20px; }
+        .approach-card h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 15px; font-weight: 600; }
+        .approach-card p { color: var(--text-light); line-height: 1.7; font-size: 0.95rem; }
 
         /* Privacy Section */
         .privacy-notice {
@@ -203,290 +142,153 @@
             margin: 0 auto 60px;
             border-left: 5px solid var(--primary-purple);
         }
+        .privacy-notice h3 { color: var(--text-dark); margin-bottom: 15px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .privacy-notice p { color: var(--text-light); font-size: 1.05rem; line-height: 1.8; }
 
-        .privacy-notice h3 {
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .privacy-notice p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        /* Form Section */
-        .form-section {
-            background-color: var(--warm-white);
-        }
-
-        .form-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .form-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container iframe {
-            width: 100%;
-            min-height: 2000px;
-            border: none;
-            border-radius: 10px;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-lavender) 100%);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+        /* --- NEW FORM STYLES --- */
+        .form-section { background-color: var(--warm-white); }
+        .form-intro { text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--text-light); font-size: 1.1rem; }
+        
+        .custom-form-container {
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        .contact-item {
-            text-align: center;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-purple);
-            margin-bottom: 15px;
-        }
-
-        .contact-item h3 {
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .contact-item a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--text-dark);
-        }
-
-        .whatsapp-badge {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 4px 12px;
+            padding: 40px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            margin-top: 8px;
+            box-shadow: 0 10px 40px rgba(107, 75, 142, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
             font-weight: 600;
-        }
-
-        /* Social Section */
-        .social {
-            background-color: var(--warm-white);
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .social-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .social h2 {
-            font-size: 1.8rem;
             color: var(--text-dark);
-            margin-bottom: 30px;
+            font-size: 0.95rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
+        .required { color: #d32f2f; }
 
-        .instagram-link, .whatsapp-community-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .instagram-link {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .whatsapp-community-link {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-        }
-
-        .instagram-link:hover, .whatsapp-community-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .social p {
-            color: var(--text-light);
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
             font-size: 1rem;
-            margin-top: 15px;
+            color: var(--text-dark);
+            background-color: var(--input-bg);
+            font-family: inherit;
+            transition: border-color 0.3s ease;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--text-dark);
-            color: #ccc;
-            padding: 50px 20px 30px;
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            background-color: white;
+        }
+
+        /* Checkbox Styling */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: var(--input-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--soft-purple);
+        }
+
+        .checkbox-item input {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-purple);
+        }
+
+        .submit-container {
             text-align: center;
+            margin-top: 30px;
         }
 
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Success Message styling */
+        #success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background-color: #f0fdf4;
+            border-radius: 20px;
+            border: 2px solid #bbf7d0;
         }
-
-        .footer-message {
-            font-size: 1.3rem;
-            color: var(--soft-purple);
+        #success-message i {
+            font-size: 3rem;
+            color: #16a34a;
             margin-bottom: 20px;
-            font-weight: 600;
+        }
+        #success-message h3 {
+            font-size: 1.8rem;
+            color: #166534;
+            margin-bottom: 10px;
         }
 
-        .disclaimer {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin: 25px 0;
-            line-height: 1.7;
-            font-style: italic;
-        }
+        /* Contact & Social (Existing Styles) */
+        .contact { background: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-lavender) 100%); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 800px; margin: 0 auto; }
+        .contact-item { text-align: center; background: white; padding: 30px; border-radius: 15px; transition: transform 0.3s ease; }
+        .contact-item:hover { transform: translateY(-3px); }
+        .contact-icon { font-size: 2.5rem; color: var(--primary-purple); margin-bottom: 15px; }
+        .contact-item h3 { color: var(--text-dark); margin-bottom: 10px; font-size: 1.2rem; }
+        .contact-item a { color: var(--text-light); text-decoration: none; font-size: 1rem; }
+        .whatsapp-badge { display: inline-block; background-color: #25D366; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; margin-top: 8px; font-weight: 600; }
+        .social { background-color: var(--warm-white); padding: 60px 20px; text-align: center; }
+        .social-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin: 20px 0; }
+        .instagram-link, .whatsapp-community-link { display: inline-flex; align-items: center; gap: 12px; color: white; padding: 18px 35px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+        .instagram-link { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .whatsapp-community-link { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .instagram-link:hover, .whatsapp-community-link:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); }
+        footer { background-color: var(--text-dark); color: #ccc; padding: 50px 20px 30px; text-align: center; }
+        .footer-message { font-size: 1.3rem; color: var(--soft-purple); margin-bottom: 20px; font-weight: 600; }
+        .disclaimer { font-size: 0.9rem; color: #aaa; margin: 25px 0; line-height: 1.7; font-style: italic; }
+        .copyright { font-size: 0.85rem; color: #888; padding-top: 20px; border-top: 1px solid #444; }
 
-        .copyright {
-            font-size: 0.85rem;
-            color: #888;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .logo img {
-                max-width: 200px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .approach-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-container iframe {
-                min-height: 2200px;
-            }
-
-            .privacy-notice {
-                padding: 25px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .instagram-link, .whatsapp-community-link {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                padding: 20px 15px 15px;
-            }
-
-            .logo img {
-                max-width: 180px;
-            }
-
-            .hero {
-                padding: 60px 15px 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            section {
-                padding: 50px 15px;
-            }
-
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-
-            .instagram-link, .whatsapp-community-link {
-                font-size: 1rem;
-                padding: 14px 25px;
-            }
+            .form-row { grid-template-columns: 1fr; }
+            .custom-form-container { padding: 25px; }
+            .hero h1 { font-size: 1.8rem; }
+            .approach-grid, .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Logo Section -->
     <div class="logo">
         <img src="./assets/images/logo.jpg" alt="HealTheHormone Program Logo">
     </div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Your Healing Journey Towards Balanced Hormones Starts Here</h1>
@@ -495,7 +297,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container">
             <h2 class="section-title">About HealTheHormone Program</h2>
@@ -505,7 +306,6 @@
         </div>
     </section>
 
-    <!-- Holistic Approach Section -->
     <section class="approach">
         <div class="container">
             <h2 class="section-title">Our Holistic Approach</h2>
@@ -513,41 +313,27 @@
             
             <div class="approach-grid">
                 <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
+                    <div class="approach-icon"><i class="fas fa-apple-alt"></i></div>
                     <h3>Diet & Nutrition</h3>
                     <p>Personalized nutritional guidance that nourishes your body and supports hormonal harmony through whole foods and mindful eating practices.</p>
                 </div>
-
                 <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
+                    <div class="approach-icon"><i class="fas fa-spa"></i></div>
                     <h3>Yoga & Movement</h3>
                     <p>Gentle yoga practices and mindful movement designed to support hormonal balance, reduce stress, and enhance physical vitality.</p>
                 </div>
-
                 <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
+                    <div class="approach-icon"><i class="fas fa-leaf"></i></div>
                     <h3>Lifestyle Modification</h3>
                     <p>Sustainable lifestyle changes that promote hormonal health, including sleep optimization, stress management, and daily routines aligned with natural rhythms.</p>
                 </div>
-
                 <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <div class="approach-icon"><i class="fas fa-heart"></i></div>
                     <h3>Mental Well-Being</h3>
                     <p>Holistic practices for emotional balance and mental clarity, recognizing the profound connection between mind and hormonal health.</p>
                 </div>
-
                 <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-mortar-pestle"></i>
-                    </div>
+                    <div class="approach-icon"><i class="fas fa-mortar-pestle"></i></div>
                     <h3>AYUSH-Based Support</h3>
                     <p>Optional guidance through Homeopathy and Ayurveda, offering time-tested natural approaches to support your healing journey.</p>
                 </div>
@@ -555,43 +341,197 @@
         </div>
     </section>
 
-    <!-- Form Section -->
     <section id="form" class="form-section">
         <div class="container">
             <h2 class="section-title">Begin Your Healing Journey</h2>
-            <p class="form-intro">Please fill in the form carefully and honestly to help us serve you better. Your information helps us understand your unique needs and provide personalized guidance.</p>
+            <p class="form-intro">Please fill in the form carefully and honestly. Your information helps us understand your unique needs and provide personalized guidance.</p>
             
             <div class="privacy-notice">
                 <h3><i class="fas fa-shield-alt"></i> Privacy & Confidentiality</h3>
                 <p>All information shared will be kept strictly confidential. You may be contacted by our team for further clarification or guidance. Your trust and privacy are paramount to us.</p>
             </div>
 
-            <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeY5b9SOiG86WPn2evf__mNPDdeuzz7h2KTsZrEED6lMN4r7A/viewform?embedded=true" style="width:100%; min-height:2000px; border:0;" loading="lazy">Loading form…</iframe>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccess();}"></iframe>
+
+            <div id="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You!</h3>
+                <p>Your details have been submitted successfully. We will get in touch with you shortly.</p>
+            </div>
+
+            <div class="custom-form-container" id="main-form-container">
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSeY5b9SOiG86WPn2evf__mNPDdeuzz7h2KTsZrEED6lMN4r7A/formResponse"
+                      method="POST" 
+                      target="hidden_iframe"
+                      onsubmit="submitted=true;">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>1) Full Name <span class="required">*</span></label>
+                            <!-- <input type="text" name="entry.REPLACE_ID_NAME" required placeholder="Enter your full name"> -->
+                            <input type="text" name="entry.618352307" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>2) Age <span class="required">*</span></label>
+                            <!-- <input type="number" name="entry.REPLACE_ID_AGE" required placeholder="e.g. 28"> -->
+                            <input type="number" name="entry.346211620" placeholder="Age" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>3) Marital Status <span class="required">*</span></label>
+                            <select name="entry.1682139565" required>
+                                <option value="" disabled selected>Select status</option>
+                                <option value="Married">Married</option>
+                                <option value="Unmarried/ Single">Unmarried/ Single</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>4) Contact Number <span class="required">*</span></label>
+                            <input type="tel" name="entry.1666705292" required placeholder="Mobile number">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>5) Email Id <span class="required">*</span></label>
+                            <input type="email" name="entry.1904518980" required placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>6) City/ Location <span class="required">*</span></label>
+                            <input type="text" name="entry.561780079" required placeholder="Current City">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>7) What is your Primary Health concern? <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="PCOS/PCOD"> PCOS/PCOD
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Irregular Periods"> Irregular Periods
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Thyroid disorders"> Thyroid disorders
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Weight Gain"> Weight Gain
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Sleep Issues"> Sleep Issues
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Stress/ Anxiety"> Stress/ Anxiety
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="Fertility Concerns"> Fertility Concerns
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.1733899349" value="__other_option__"> Other
+                            </label>
+                            <textarea
+                                name="entry.1733899349.other_option_response"
+                                placeholder="Please specify"
+                                style="margin-top:10px; width:100%; display:none;"
+                                id="health-other-text"
+                            ></textarea>
+                        </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label>8) How long have you been facing this issue? <span class="required">*</span></label>
+                        <select name="entry.1212118056" required>
+                            <option value="" disabled selected>Select duration</option>
+                            <option value="Less than 6 months">Less than 6 months</option>
+                            <option value="6 months - 1 year">6 months - 1 year</option>
+                            <option value="More than 1 year">More than 1 year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>9) Are you currently on any medication or treatment? <span class="required">*</span></label>
+                        <select name="entry.2095094763" required onchange="toggleMedicationDetails(this)">
+                            <option value="" disabled selected>Select option</option>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="medication-details-group" style="display:none;">
+                        <label>If yes, please mention briefly:</label>
+                        <textarea 
+                            name="entry.2095094763.other_option_response"
+                            rows="2"
+                            placeholder="Describe medication..."
+                        ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>10) Are you joining this program for <span class="required">*</span></label>
+                        <select name="entry.1190784265" required>
+                            <option value="" disabled selected>Select goal</option>
+                            <option value="Hormone healing support program">Hormone healing support program</option>
+                            <option value="Hormone healing support + Medicinal support (Ayurvedic, Homeopathy)">Hormone healing support + Medicinal support (Ayurvedic, Homeopathy)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>11) Would you like optional holistic treatment support? <span class="required">*</span></label>
+                        <select name="entry.1122228927" required id="holistic-select" onchange="toggleApproaches(this)">
+                            <option value="" disabled selected>Select option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="approaches-group">
+                        <label>12) If yes, which approaches are you open to? (Optional)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.168093528" value="Ayurveda"> Ayurveda
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="entry.168093528" value="Homeopathy"> Homeopathy
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>13) Consent <span class="required">*</span></label>
+
+                        <label class="checkbox-item">
+                            <input 
+                                type="checkbox"
+                                name="entry.1381433543"
+                                value="I consent to participate voluntarily."
+                                required
+                            >
+                            I understand that this hormone healing and holistic support program is optional and I consent to participate voluntarily.
+                        </label>
+                    </div>
+
+                    <div class="submit-container">
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">We're here to support you on your healing journey. Reach out to us for guidance and assistance.</p>
-            
             <div class="contact-grid">
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>WhatsApp</h3>
                     <a href="https://wa.me/917727325522">+91 77273 25522</a>
                     <div class="whatsapp-badge">WhatsApp Only</div>
                 </div>
-
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <h3>Email</h3>
                     <a href="mailto:healthehormone@gmail.com">healthehormone@gmail.com</a>
                 </div>
@@ -599,7 +539,6 @@
         </div>
     </section>
 
-    <!-- Social Media Section -->
     <section class="social">
         <div class="social-content">
             <h2>Join Our Community</h2>
@@ -613,33 +552,61 @@
                     Join WhatsApp Community
                 </a>
             </div>
-            <p>Follow us on Instagram and join our WhatsApp community for wellness insights, tips, and inspiration on your journey to hormonal balance.</p>
+            <p>Follow us on Instagram and join our WhatsApp community for wellness insights, tips, and inspiration.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-message">HealTheHormone Program – Supporting Natural Hormone Balance</div>
-            
             <div class="disclaimer">
-                This program provides wellness guidance and holistic support. We do not diagnose medical conditions or guarantee specific treatment outcomes. Please consult with qualified healthcare professionals for medical advice. Our approach complements, but does not replace, conventional medical care.
+                This program provides wellness guidance and holistic support. We do not diagnose medical conditions.
             </div>
-            
             <div class="copyright">
-                © 2026 HealTheHormone Program. All rights reserved. | Committed to your wellness journey with compassion and care.
+                © 2026 HealTheHormone Program. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for CTA button
+        // Smooth scrolling
         document.querySelector('.cta-button').addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector('#form').scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.querySelector('#form').scrollIntoView({ behavior: 'smooth' });
         });
+
+        // Form Logic
+        var submitted = false;
+        
+        function showSuccess() {
+            document.getElementById('main-form-container').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+            document.querySelector('#form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle Medication Details Text Area
+        function toggleMedicationDetails(select) {
+            var detailsGroup = document.getElementById('medication-details-group');
+            if(select.value === 'Yes') {
+                detailsGroup.style.display = 'block';
+            } else {
+                detailsGroup.style.display = 'none';
+            }
+        }
+
+        // Toggle Approaches based on holistic support question
+        function toggleApproaches(select) {
+            // Optional visual logic - currently showing it always or you can hide it
+            // if user selects "No".
+            var approachGroup = document.getElementById('approaches-group');
+            if(select.value === 'No') {
+                approachGroup.style.opacity = '0.5';
+                approachGroup.style.pointerEvents = 'none';
+            } else {
+                approachGroup.style.opacity = '1';
+                approachGroup.style.pointerEvents = 'auto';
+            }
+        }
     </script>
 </body>
 </html>
